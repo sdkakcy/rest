@@ -24,5 +24,21 @@ class DatabaseSeeder extends Seeder
                 'revenue' => $user['revenue']
             ]);
         }
+
+        foreach ($exampleData['products'] as $product) {
+            \App\Models\Product::factory()->create([
+                'name' => $product['name'],
+                'category' => $product['category'],
+                'price' => $product['price'],
+                'stock' => $product['stock'],
+            ]);
+        }
+
+        foreach ($exampleData['discounts'] as $discount) {
+            \App\Models\Discount::factory()->create([
+                'name' => $discount['name'],
+                'description' => $discount['description'],
+            ]);
+        }
     }
 }
