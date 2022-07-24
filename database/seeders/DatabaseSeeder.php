@@ -33,12 +33,5 @@ class DatabaseSeeder extends Seeder
                 'stock' => $product['stock'],
             ]);
         }
-
-        foreach ($exampleData['discounts'] as $discount) {
-            \App\Models\Discount::factory()->create([
-                'name' => $discount['name'],
-                'description' => $discount['description'],
-            ]);
-        }
     }
 }

@@ -2,63 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Discount;
-use Illuminate\Http\Request;
+use App\Models\Order;
+use App\Services\Discount;
 
 class DiscountController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Calculate order discounts
      *
+     * @param Order $order
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function discounts(Order $order)
     {
-        //
-    }
+        try {
+            $order->loadMissing(['items', 'items.product']);
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+            $discounts = new Discount($order);
+            $discounts->calculate();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Discount  $discount
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Discount $discount)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Discount  $discount
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Discount $discount)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Discount  $discount
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Discount $discount)
-    {
-        //
+            return get_object_vars($discounts);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => $e->getMessage()
+            ]);
+        }
     }
 }

@@ -61,20 +61,5 @@ return [
             "price" => 12.95,
             "stock" => 10
         ]
-    ],
-
-    "discounts" => [
-        [
-            "name" => "10_PERCENT_OVER_1000",
-            "description" => "Toplam 1000TL ve üzerinde alışveriş yapan bir müşteri, siparişin tamamından %10 indirim kazanır."
-        ],
-        [
-            "name" => "BUY_5_GET_1",
-            "description" => "2 ID'li kategoriye ait bir üründen 6 adet satın alındığında, bir tanesi ücretsiz olarak verilir."
-        ],
-        [
-            "name" => "BUY_2_GET_20_PERCENT_ON_CATEGORY_2",
-            "description" => "1 ID'li kategoriden iki veya daha fazla ürün satın alındığında, en ucuz ürüne %20 indirim yapılır."
-        ],
     ]
 ];

@@ -47,7 +47,7 @@ class OrderController extends Controller
                 $product = Product::find($item['product_id']);
 
                 if ($item['quantity'] > $product->stock) {
-                    throw new OutOfStockException(__(':product ürünü için stok yetersiz.', ['product' => $product->name]));
+                    throw new OutOfStockException(__(':product (#:id) ürünü için stok yetersiz.', ['id' => $product->id, 'product' => $product->name]));
                 }
 
                 $total = $product->price * $item['quantity'];
