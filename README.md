@@ -18,7 +18,7 @@ Bu proje laravel 8, ile geliştirilmiş, development ortamı laravel/sail ile do
 * ***php artisan key:generate***
 * ***composer install***
 * ***./vendor/bin/sail up*** komutunu çalıştırıyoruz.
-* Sail ile devam edeceksek ***./vendor/bin/sail shell***
+* ***./vendor/bin/sail shell***
 * ***php artisan migrate --seed***
 
 ***
