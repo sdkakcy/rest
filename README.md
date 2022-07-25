@@ -14,7 +14,7 @@ Bu proje laravel 8, ile geliştirilmiş, development ortamı laravel/sail ile do
 * docker
 
 #
-* Projeyi çektikten sonra ilk olarak ***.env.example*** dosyasından kendi ***.env*** dosyamızı türetiyoruz. Gerekli ayarlamaları yapıyoruz.
+* Projeyi çektikten sonra ilk olarak ***.env.example*** dosyasından kendi ***.env*** dosyamızı türetiyoruz. Gerekliyse düzenleme yapıyoruz.
 * ***php artisan key:generate***
 * ***composer install***
 * ***./vendor/bin/sail up*** komutunu çalıştırıyoruz.
